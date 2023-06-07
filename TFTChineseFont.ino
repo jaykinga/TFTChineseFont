@@ -1,5 +1,6 @@
 #include <TFT_eSPI.h>
 #include "heiti_35.h"
+#include "heiti_16.h"
 TFT_eSPI tft;
 void setup()
 {
@@ -14,10 +15,12 @@ void setup()
     ledcAttachPin(2, 1);
     ledcWrite(1, pow(2, 10)); // 设置屏幕亮度为25%
     tft.loadFont(heiti_35);
-    tft.setCursor(0,5);
     tft.println("你好啊");
     tft.unloadFont();
-    
+
+    tft.loadFont(heiti_16);
+    tft.println("你好啊16");
+    tft.unloadFont();
 }
 void loop()
 {
